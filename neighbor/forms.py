@@ -15,10 +15,10 @@ class UpdateUserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email')
 
-# class NeighbourHoodForm(forms.ModelForm):
-#     class Meta:
-#         model = Neighborhood
-#         exclude = ('admin','occupants_count')
+class NeighbourHoodForm(forms.ModelForm):
+    class Meta:
+        model = Neighborhood
+        exclude = ('admin','occupants_count')
 
 # class BusinessForm(forms.ModelForm):
 #     class Meta:
