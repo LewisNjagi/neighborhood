@@ -75,18 +75,18 @@ def single_hood(request, hood_id):
     }
     return render(request, 'single_hood.html', params)
 
-# def join(request, id):
-#     hood = get_object_or_404(Neighborhood, id=id)
-#     request.user.profile.neighborhood = hood
-#     request.user.profile.save()
-#     return redirect('single_hood', hood.id)
+def join(request, id):
+    hood = get_object_or_404(Neighborhood, id=id)
+    request.user.profile.neighborhood = hood
+    request.user.profile.save()
+    return redirect('single_hood', hood.id)
 
 
-# def leave(request, id):
-#     hood = get_object_or_404(Neighborhood, id=id)
-#     request.user.profile.neighborhood = None
-#     request.user.profile.save()
-#     return redirect('hoods')
+def leave(request, id):
+    hood = get_object_or_404(Neighborhood, id=id)
+    request.user.profile.neighborhood = None
+    request.user.profile.save()
+    return redirect('hoods')
 
 
 # def search_profile(request):
