@@ -89,20 +89,20 @@ def leave(request, id):
     return redirect('hoods')
 
 
-# def search_profile(request):
-#     if 'search_user' in request.GET and request.GET['search_user']:
-#         name = request.GET.get("search_user")
-#         results = Business.search_business(name)
-#         print(results)
-#         message = f'name'
-#         params = {
-#             'results': results,
-#             'message': message
-#         }
-#         return render(request, 'results.html', params)
-#     else:
-#         message = "You did not make a selection"
-#     return render(request, 'results.html', {'message': message})
+def search_profile(request):
+    if 'search_user' in request.GET and request.GET['search_user']:
+        name = request.GET.get("search_user")
+        results = Business.search_business(name)
+        print(results)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "You did not make a selection"
+    return render(request, 'results.html', {'message': message})
 
 # class ProfileList(APIView):
 #     def get(self, request, format=None):
