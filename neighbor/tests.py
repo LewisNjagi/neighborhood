@@ -12,11 +12,11 @@ class ProfileTestClass(TestCase):
         self.profile = Profile(id=1,user=self.user,photo='download.jpeg',bio='My name is Martin', name='person')
         self.profile.save_profile()
 
-#     def tearDown(self):
-#         Profile.objects.all().delete()
-#         User.objects.all().delete()
-#         Neighborhood.objects.all().delete()
-#         Business.objects.all().delete()
+    def tearDown(self):
+        Profile.objects.all().delete()
+        User.objects.all().delete()
+        Neighborhood.objects.all().delete()
+        Business.objects.all().delete()
 
 #     def test_instance(self):
 #         self.assertTrue(isinstance(self.user,User))
