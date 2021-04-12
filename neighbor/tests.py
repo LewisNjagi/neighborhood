@@ -45,10 +45,10 @@ class NeighborTestClass(TestCase):
         self.assertTrue(isinstance(self.profile,Profile))
         self.assertTrue(isinstance(self.post, Neighborhood))
 
-#     def test_create_neigborhood(self):
-#         self.post.save_post()
-#         posts = Neighborhood.objects.all()
-#         self.assertTrue(len(posts) > 0)
+    def test_create_neigborhood(self):
+        self.post.save_post()
+        posts = Neighborhood.objects.all()
+        self.assertTrue(len(posts) > 0)
 
 #     def test_delete_neigborhood(self):
 #         self.post.save_post()
