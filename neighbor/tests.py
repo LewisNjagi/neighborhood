@@ -50,11 +50,11 @@ class NeighborTestClass(TestCase):
         posts = Neighborhood.objects.all()
         self.assertTrue(len(posts) > 0)
 
-#     def test_delete_neigborhood(self):
-#         self.post.save_post()
-#         self.post.delete_post()
-#         posts = Neighborhood.objects.all()
-#         self.assertTrue(len(posts) <= 0)
+    def test_delete_neigborhood(self):
+        self.post.save_post()
+        self.post.delete_post()
+        posts = Neighborhood.objects.all()
+        self.assertTrue(len(posts) <= 0)
 
 #     def find_neigborhood(self):
 #         self.post.save_post()
