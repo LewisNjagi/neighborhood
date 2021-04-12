@@ -17,7 +17,7 @@ As a user of the website you will be able to:
       ```
 2. Move to the folder and install requirements
       ```bash
-      cd awwards
+      cd neighborhood
       pip install -r requirements.txt
       ```
 3. Running the application
