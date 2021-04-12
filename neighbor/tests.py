@@ -27,23 +27,23 @@ class ProfileTestClass(TestCase):
         profile = Profile.objects.all()
         self.assertTrue(len(profile) > 0)
 
-# class NeighborTestClass(TestCase):
-#     def setUp(self):
-#         self.profile = Profile(user=User(username='martin'))
-#         self.profile.user.save()
-#         self.profile.save()
-#         self.post = Neighborhood(id='1',name='Yes', location='Nairobi',
-#         admin=self.profile,
-#         hood_logo='default.jpeg', 
-#         occupants_count='0',
-#         health_department='0', 
-#         police_number='0',
-#         description='this is it',)
-#         self.post.save_post()
+class NeighborTestClass(TestCase):
+    def setUp(self):
+        self.profile = Profile(user=User(username='martin'))
+        self.profile.user.save()
+        self.profile.save()
+        self.post = Neighborhood(id='1',name='Yes', location='Nairobi',
+        admin=self.profile,
+        hood_logo='default.jpeg', 
+        occupants_count='0',
+        health_department='0', 
+        police_number='0',
+        description='this is it',)
+        self.post.save_post()
 
-#     def test_insatance(self):
-#         self.assertTrue(isinstance(self.profile,Profile))
-#         self.assertTrue(isinstance(self.post, Neighborhood))
+    def test_insatance(self):
+        self.assertTrue(isinstance(self.profile,Profile))
+        self.assertTrue(isinstance(self.post, Neighborhood))
 
 #     def test_create_neigborhood(self):
 #         self.post.save_post()
