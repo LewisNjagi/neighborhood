@@ -104,11 +104,11 @@ def search_profile(request):
         message = "You did not make a selection"
     return render(request, 'results.html', {'message': message})
 
-# class ProfileList(APIView):
-#     def get(self, request, format=None):
-#         all_profile = Profile.objects.all()
-#         serializers = ProfileSerializer(all_profile, many=True)
-#         return Response(serializers.data)
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profile = Profile.objects.all()
+        serializers = ProfileSerializer(all_profile, many=True)
+        return Response(serializers.data)
 
 # class UserList(APIView):
 #     def get(self, request, format=None):
