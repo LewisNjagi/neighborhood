@@ -41,39 +41,39 @@ def hoods(request):
 
     return render(request,'all_hoods.html',{"all_hoods":hoods,"form":form})
 
-# def single_hood(request, hood_id):
-#     hood = Neighborhood.objects.get(id=hood_id)
-#     business = Business.objects.filter(neighborhood=hood)
-#     posts = Post.objects.filter(hood=hood)
-#     posts = posts[::-1]
-#     if request.method == 'POST':
-#         form = BusinessForm(request.POST,request.FILES)
-#         if form.is_valid():
-#             b_form = form.save(commit=False)
-#             b_form.neighborhood = hood
-#             b_form.user = request.user.profile
-#             b_form.save()
-#             return redirect('single_hood', hood.id)
-#     else:
-#         form = BusinessForm()
-#     if request.method == 'POST':
-#         post_form = PostForm(request.POST)
-#         if post_form.is_valid():
-#             post = post_form.save(commit=False)
-#             post.hood = hood
-#             post.user = request.user.profile
-#             post.save()
-#             return redirect('single_hood', hood.id)
-#     else:
-#         post_form = PostForm()
-#     params = {
-#         'hood': hood,
-#         'business': business,
-#         'post_form': post_form,
-#         'posts': posts,
-#         'form': form,
-#     }
-#     return render(request, 'single_hood.html', params)
+def single_hood(request, hood_id):
+    hood = Neighborhood.objects.get(id=hood_id)
+    business = Business.objects.filter(neighborhood=hood)
+    posts = Post.objects.filter(hood=hood)
+    posts = posts[::-1]
+    if request.method == 'POST':
+        form = BusinessForm(request.POST,request.FILES)
+        if form.is_valid():
+            b_form = form.save(commit=False)
+            b_form.neighborhood = hood
+            b_form.user = request.user.profile
+            b_form.save()
+            return redirect('single_hood', hood.id)
+    else:
+        form = BusinessForm()
+    if request.method == 'POST':
+        post_form = PostForm(request.POST)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.hood = hood
+            post.user = request.user.profile
+            post.save()
+            return redirect('single_hood', hood.id)
+    else:
+        post_form = PostForm()
+    params = {
+        'hood': hood,
+        'business': business,
+        'post_form': post_form,
+        'posts': posts,
+        'form': form,
+    }
+    return render(request, 'single_hood.html', params)
 
 # def join(request, id):
 #     hood = get_object_or_404(Neighborhood, id=id)
