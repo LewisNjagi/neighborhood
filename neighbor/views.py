@@ -4,12 +4,15 @@ from .models import Neighborhood,Profile,Post,Business
 from django.http import HttpResponse,HttpResponseRedirect
 from .serializer import ProfileSerializer,UserSerializer
 from rest_framework.views import APIView
+from django.contrib.auth.decorators import login_required
+
 
 
 # Create your views here.
 def index(request):
     return render(request,'index.html')
 
+@login_required(login_url='/accounts/login/')
 def profile(request, username):
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
@@ -27,6 +30,7 @@ def profile(request, username):
     }
     return render(request, 'profile.html', params)
 
+@login_required(login_url='/accounts/login/')
 def hoods(request):
     hoods = Neighborhood.objects.all()
     form = NeighbourHoodForm(request.POST, request.FILES)
@@ -41,6 +45,7 @@ def hoods(request):
 
     return render(request,'all_hoods.html',{"all_hoods":hoods,"form":form})
 
+@login_required(login_url='/accounts/login/')
 def single_hood(request, hood_id):
     hood = Neighborhood.objects.get(id=hood_id)
     business = Business.objects.filter(neighborhood=hood)
@@ -88,7 +93,7 @@ def leave(request, id):
     request.user.profile.save()
     return redirect('hoods')
 
-
+@login_required(login_url='/accounts/login/')
 def search_profile(request):
     if 'search_user' in request.GET and request.GET['search_user']:
         name = request.GET.get("search_user")
