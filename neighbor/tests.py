@@ -93,10 +93,10 @@ class BusinessTestClass(TestCase):
         self.assertTrue(isinstance(self.post, Neighborhood))
         self.assertTrue(isinstance(self.business, Business))
 
-#     def test_create_neigborhood(self):
-#         self.business.create_business()
-#         posts = Business.objects.all()
-#         self.assertTrue(len(posts) > 0)
+    def test_create_neigborhood(self):
+        self.business.create_business()
+        posts = Business.objects.all()
+        self.assertTrue(len(posts) > 0)
 
 #     def test_delete_business(self):
 #         self.business.create_business()
