@@ -56,10 +56,10 @@ class NeighborTestClass(TestCase):
         posts = Neighborhood.objects.all()
         self.assertTrue(len(posts) <= 0)
 
-#     def find_neigborhood(self):
-#         self.post.save_post()
-#         post = Neighborhood.find_neighborhood(neighborhood_id)
-#         self.assertEqual(post.id,'1')
+    def find_neigborhood(self):
+        self.post.save_post()
+        post = Neighborhood.find_neighborhood(neighborhood_id)
+        self.assertEqual(post.id,'1')
 
 #     def test_update_neighborhood(self):
 #         self.post.save_post()
