@@ -27,19 +27,19 @@ def profile(request, username):
     }
     return render(request, 'profile.html', params)
 
-# def hoods(request):
-#     hoods = Neighborhood.objects.all()
-#     form = NeighbourHoodForm(request.POST, request.FILES)
-#     print(form.errors)
-#     if form.is_valid():
-#         post = form.save(commit=False)
-#         post.admin = request.user.profile
-#         post.save()
-#         return redirect('hoods')
-#     else:
-#         form = NeighbourHoodForm(request.POST, request.FILES)
+def hoods(request):
+    hoods = Neighborhood.objects.all()
+    form = NeighbourHoodForm(request.POST, request.FILES)
+    print(form.errors)
+    if form.is_valid():
+        post = form.save(commit=False)
+        post.admin = request.user.profile
+        post.save()
+        return redirect('hoods')
+    else:
+        form = NeighbourHoodForm(request.POST, request.FILES)
 
-#     return render(request,'all_hoods.html',{"all_hoods":hoods,"form":form})
+    return render(request,'all_hoods.html',{"all_hoods":hoods,"form":form})
 
 # def single_hood(request, hood_id):
 #     hood = Neighborhood.objects.get(id=hood_id)
