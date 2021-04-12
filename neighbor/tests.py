@@ -18,14 +18,14 @@ class ProfileTestClass(TestCase):
         Neighborhood.objects.all().delete()
         Business.objects.all().delete()
 
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.user,User))
-#         self.assertTrue(isinstance(self.profile, Profile))
+    def test_instance(self):
+        self.assertTrue(isinstance(self.user,User))
+        self.assertTrue(isinstance(self.profile, Profile))
 
-#     def test_save_method(self):
-#         self.profile.save_profile()
-#         profile = Profile.objects.all()
-#         self.assertTrue(len(profile) > 0)
+    def test_save_method(self):
+        self.profile.save_profile()
+        profile = Profile.objects.all()
+        self.assertTrue(len(profile) > 0)
 
 # class NeighborTestClass(TestCase):
 #     def setUp(self):
