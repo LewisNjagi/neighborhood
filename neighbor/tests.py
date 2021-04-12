@@ -61,11 +61,11 @@ class NeighborTestClass(TestCase):
         post = Neighborhood.find_neighborhood(neighborhood_id)
         self.assertEqual(post.id,'1')
 
-#     def test_update_neighborhood(self):
-#         self.post.save_post()
-#         new_caption =Neighborhood.update_post('this is it','Yeah')
-#         post = Neighborhood.objects.get(description='Yeah')
-#         self.assertEqual(post.description,'Yeah')
+    def test_update_neighborhood(self):
+        self.post.save_post()
+        new_caption =Neighborhood.update_post('this is it','Yeah')
+        post = Neighborhood.objects.get(description='Yeah')
+        self.assertEqual(post.description,'Yeah')
 
 
 # class BusinessTestClass(TestCase):
