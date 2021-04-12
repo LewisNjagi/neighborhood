@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'neighbor',
-    # 'bootstrap4',
+    'bootstrap4',
     # 'rest_framework',
 ]
 
