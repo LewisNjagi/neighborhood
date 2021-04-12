@@ -10,5 +10,5 @@ urlpatterns=[
     path('join_hood/<id>',views.join,name='join'),
     path('leave_hood/<id>',views.leave,name='leave'),
     path('api/profile/', views.ProfileList.as_view()),
-#     path('api/users/', views.UserList.as_view()),
+    path('api/users/', views.UserList.as_view()),
 ]
