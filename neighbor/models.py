@@ -64,35 +64,35 @@ class Neighborhood(models.Model):
     def __str__(self):
         return f'{self.name} hood'
 
-# class Business(models.Model):
-#     name = models.CharField(max_length=120)
-#     photo = CloudinaryField('gallery/',default='default.jpeg',null=True)
-#     email = models.EmailField(max_length=254)
-#     description = models.TextField(blank=True)
-#     neighborhood = models.ForeignKey('NeighborHood', on_delete=models.CASCADE, related_name='business',null=True)
-#     user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='owner',null=True)
+class Business(models.Model):
+    name = models.CharField(max_length=120)
+    photo = CloudinaryField('gallery/',default='default.jpeg',null=True)
+    email = models.EmailField(max_length=254)
+    description = models.TextField(blank=True)
+    neighborhood = models.ForeignKey('NeighborHood', on_delete=models.CASCADE, related_name='business',null=True)
+    user = models.ForeignKey(Profile, on_delete=models.CASCADE, related_name='owner',null=True)
 
-#     def __str__(self):
-#         return f'{self.name} Business'
+    def __str__(self):
+        return f'{self.name} Business'
 
-#     @classmethod
-#     def find_business(cls, business_id):
-#         return cls.objects.filter(id=business_id)
+    @classmethod
+    def find_business(cls, business_id):
+        return cls.objects.filter(id=business_id)
 
-#     @classmethod
-#     def update_post(cls,old,new):
-#         cap = Business.objects.filter(description=old).update(description=new)
-#         return cap
+    @classmethod
+    def update_post(cls,old,new):
+        cap = Business.objects.filter(description=old).update(description=new)
+        return cap
 
-#     def create_business(self):
-#         self.save()
+    def create_business(self):
+        self.save()
 
-#     def delete_business(self):
-#         self.delete()
+    def delete_business(self):
+        self.delete()
 
-#     @classmethod
-#     def search_business(cls, name):
-#         return cls.objects.filter(name__icontains=name).all()
+    @classmethod
+    def search_business(cls, name):
+        return cls.objects.filter(name__icontains=name).all()
 
 # class Post(models.Model):
 #     title = models.CharField(max_length=120, null=True)
