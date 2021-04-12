@@ -109,8 +109,8 @@ class BusinessTestClass(TestCase):
         post = Business.find_business(business_id)
         self.assertEqual(post.id,'1')
 
-#     def test_update_business(self):
-#         self.business.create_business()
-#         new_caption =Business.update_post('this is it','Yeah')
-#         post = Business.objects.get(description='Yeah')
-#         self.assertEqual(post.description,'Yeah')
+    def test_update_business(self):
+        self.business.create_business()
+        new_caption =Business.update_post('this is it','Yeah')
+        post = Business.objects.get(description='Yeah')
+        self.assertEqual(post.description,'Yeah')
