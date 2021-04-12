@@ -35,7 +35,8 @@ As a user of the website you will be able to:
 | View Profile | 
  
 ## Live Link
-https://mtaanii.herokuapp.com/No known Bugs
+https://mtaanii.herokuapp.com/
+No known Bugs
 ## Technologies Used 
 * PYTHON
 * DJANGO
