@@ -98,11 +98,11 @@ class BusinessTestClass(TestCase):
         posts = Business.objects.all()
         self.assertTrue(len(posts) > 0)
 
-#     def test_delete_business(self):
-#         self.business.create_business()
-#         self.business.delete_business()
-#         posts = Business.objects.all()
-#         self.assertTrue(len(posts) <= 0)
+    def test_delete_business(self):
+        self.business.create_business()
+        self.business.delete_business()
+        posts = Business.objects.all()
+        self.assertTrue(len(posts) <= 0)
 
 #     def find_business(self):
 #         self.business.create_business()
