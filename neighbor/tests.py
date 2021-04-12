@@ -68,30 +68,30 @@ class NeighborTestClass(TestCase):
         self.assertEqual(post.description,'Yeah')
 
 
-# class BusinessTestClass(TestCase):
-#     def setUp(self):
-#         self.profile = Profile(user=User(username='martin'))
-#         self.profile.user.save()
-#         self.profile.save()
-#         self.post = Neighborhood(id='1',name='Yes', location='Nairobi',
-#         admin=self.profile,
-#         hood_logo='default.jpeg', 
-#         occupants_count='0',
-#         health_department='0', 
-#         police_number='0',
-#         description='this is it',)
-#         self.post.admin.save()
-#         self.post.save()
-#         self.business = Business(id='1',name='Yes',
-#         photo='default.jpeg', 
-#         email='l@gmsil.com',
-#         description='this is it',)
-#         self.business.create_business()
+class BusinessTestClass(TestCase):
+    def setUp(self):
+        self.profile = Profile(user=User(username='martin'))
+        self.profile.user.save()
+        self.profile.save()
+        self.post = Neighborhood(id='1',name='Yes', location='Nairobi',
+        admin=self.profile,
+        hood_logo='default.jpeg', 
+        occupants_count='0',
+        health_department='0', 
+        police_number='0',
+        description='this is it',)
+        self.post.admin.save()
+        self.post.save()
+        self.business = Business(id='1',name='Yes',
+        photo='default.jpeg', 
+        email='l@gmsil.com',
+        description='this is it',)
+        self.business.create_business()
 
-#     def test_insatance(self):
-#         self.assertTrue(isinstance(self.profile,Profile))
-#         self.assertTrue(isinstance(self.post, Neighborhood))
-#         self.assertTrue(isinstance(self.business, Business))
+    def test_insatance(self):
+        self.assertTrue(isinstance(self.profile,Profile))
+        self.assertTrue(isinstance(self.post, Neighborhood))
+        self.assertTrue(isinstance(self.business, Business))
 
 #     def test_create_neigborhood(self):
 #         self.business.create_business()
