@@ -104,10 +104,10 @@ class BusinessTestClass(TestCase):
         posts = Business.objects.all()
         self.assertTrue(len(posts) <= 0)
 
-#     def find_business(self):
-#         self.business.create_business()
-#         post = Business.find_business(business_id)
-#         self.assertEqual(post.id,'1')
+    def find_business(self):
+        self.business.create_business()
+        post = Business.find_business(business_id)
+        self.assertEqual(post.id,'1')
 
 #     def test_update_business(self):
 #         self.business.create_business()
